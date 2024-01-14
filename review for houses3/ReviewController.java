@@ -90,7 +90,7 @@ public class ReviewController {
   	@GetMapping("/reviews/{houseid}")
   	public String getReviews(@PathVariable("houseid") int houseid, Model model) {
   		List<Review> reviews = reviewRepository.findByHouseid(houseid);
-  		model.addAttribute("revies",reviews);
+  		model.addAttribute("reviews",reviews);
   		
   		return "reviews/show";
   	} 
