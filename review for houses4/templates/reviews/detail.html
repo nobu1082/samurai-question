@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>レビュー　編集ページ</title>
+</head>
+
+<body>
+
+    <h1>レビュー　編集ページ</h1>
+    <form action="#" th:action="@{/saveReview}" th:object="${Review}" method="post">
+        
+        <input type="hidden" th:field="*{id}">
+      
+        <label for="name">お名前</label>
+        <input type="text" th:field="*{name}" id="name">
+       
+        <label for="commentText">レビュー</label>
+        <input type="text" th:field="*{commentText}" id="description">
+        
+             <label for="value">点数（５点満点）</label>
+        <input type="text" th:field="*{value}" id="value">
+        
+        
+        <input type="submit" value="更新する">
+    </form>
+    
+    <a href="/">一覧ページに戻る</a>
+</body>
+</html>

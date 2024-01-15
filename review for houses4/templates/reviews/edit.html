@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>レビュー　編集ページ</title>
+</head>
+     
+    <body>
+    
+    <h1>レビュー　編集ページ</h1>
+    
+    <form action="#" th:action="@{/saveReveiw}" th:object="${Review}" method="post">
+        <input type="hidden" th:field="*{id}">
+        
+        <label for="name">お名前</label>
+        <input type="text" th:field="*{name}" id="name">
+        
+        <label for="commentText">レビュー</label>
+        <input type="text" th:field="*{commentText}" id="commentText">
+        
+        <label for="value">点数</label>
+         <input type="number" th:field="*{value}" id="value" min="1" max="5">
+        
+        
+        <input type="submit" value="更新する">
+    </form>
+    
+    <a href="/">一覧ページに戻る</a>
+       <!-- フッター -->
+             <div th:replace="~{fragment :: footer}"></div>
+         </div>    
+         
+         <div th:replace="~{fragment :: scripts}"></div>  
+         <script th:src="@{/js/preview.js}"></script>     
+     </body>
+ </html>                          
+                             
